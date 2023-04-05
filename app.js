@@ -1,0 +1,6 @@
+const addBook = document.getElementById("addBook")
+const subtractBook = document.getElementById("subtractBook")
+const bookForm = document.getElementById("bookForm")
+const bookName = document.getElementById("bookName")
+const bookAuthor = document.getElementById("bookAuthor")
+const bookPub = document.getElementById("bookPub")
