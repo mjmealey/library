@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bakbak+One&family=Bungee+Inline&family=Bungee+Shade&family=Cabin+Sketch&family=Montserrat+Subrayada&family=Oswald:wght@700&family=Piedra&family=Potta+One&family=Press+Start+2P&family=Righteous&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bakbak+One&family=Bungee+Inline&family=Bungee+Shade&family=Cabin+Sketch&family=Montserrat+Subrayada&family=Oswald:wght@700&family=Piedra&family=Potta+One&family=Press+Start+2P&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
@@ -21,52 +24,92 @@
 
     <main id="mainContainer">
       <div id="bookContainer">
- 
         <h3 id="bookTitle" class="bookCategory">Title</h3>
-        <h3 id="bookAuthor" class="bookCategory">Author</h3>
+        <h3 id="authorHeader" class="bookCategory">Author</h3>
         <h3 id="bookYear" class="bookCategory">Year</h3>
+        <h3 id="pageCount">Page(s)</h3>
         <h3 id="bookStatus" class="bookCategory">Status</h3>
-
+        </div>
         <button id="addBook" class="bookButton">Add Book</button>
-        <button id="subtractBook" class="bookButton">Remove Book</button>
+      
+      <div id="displayContainer">
+        <ul id="bookCatalog"></ul>
       </div>
-      <form id="bookForm" method="get" style="display:none">
-        <label for="bookName" class="bookLabel"
-          >Title:
-          <input
-            id="bookName"
-            type="text"
-            name="user_bookTitle"
-            pattern="^[a-zA-Z0-9]?+$"
-            required
-          />
-        </label>
-        <label for="bookAuthor" class="bookLabel"
-          >Author:
-          <input
-            id="bookAuthor"
-            type="text"
-            name="user_bookAuthor"
-            pattern="^[a-zA-Z]?+$"
-            required
-          />
-        </label>
-        <label for="bookPub" class="bookLabel"
-          >Year:
-          <input id="bookPub" type="date" name="user_bookYear" required />
-        </label>
-        <span class="bookLabel">Read?</span>
-        <label for="yes" class="bookLabel"
-          >Yes
-          <input id="yes" type="radio" name="user_yes" />
-          <label for="no" class="bookLabel"
-            >No
-            <input id="no" type="radio" name="user_no" />
+
+        <form id="bookForm" method="get" style="display: none">
+            <h1 id="formLabel">Please fill this out</h1>
+          <label for="bookName" class="formContent"
+            >Title:
+            <input
+              id="bookName"
+              class="bookInput"
+              type="text" 
+              name="user_bookTitle"
+              pattern="^[a-zA-Z0-9]?+$"
+              required
+            />
           </label>
-        </label>
-        <button id="submitButton" type="submit">Add Book</button>
-      </form>  
-     
+          <label class="formContent" for="bookPages">Page #:</label>
+          <input
+            id="bookPages"
+            class="bookInput"
+            type="text"
+            pattern="^0[0-9]1[10-12]?+$"
+            required
+          />
+          <label for="bookAuthor" class="formContent"
+            >Author:
+            <input
+              id="bookAuthor"
+              class="bookInput"
+              type="text"
+              name="user_bookAuthor"
+              pattern="^[a-zA-Z]?+$"
+              required
+            />
+          </label>
+          <label for="bookPub" class="bookLabel"
+            >Year:
+            <input id="bookPub" type="date" name="user_bookYear" required />
+          </label>
+          <div id="checkboxContainer">
+            <span class="formContent">Status</span>
+            <label class="formContent" for="completed"
+              >Completed
+              <input
+                id="completed"
+                type="checkbox"
+                name="user_read"
+                value="Read"
+              />
+            </label>
+            <label class="formContent" for="stillReading"
+              >Still Reading
+              <input
+                class="formContent"
+                id="stillReading"
+                type="checkbox"
+                name="user_notComplete"
+              />
+            </label>
+            <label class="formContent" for="notStarted"
+              >Not Started
+              <input
+                class="formContent"
+                id="notStarted"
+                type="checkbox"
+                name="user_notStarted"
+              />
+            </label>
+          </div>
+          <div id="boxContainer">
+            <button class="formContent" id="submitButton" type="submit">
+              Submit
+            </button>
+          </div>
+      
+      </div>
+        </form>
     </main>
     <footer>
       <div id="footerContainer"></div>
